@@ -121,6 +121,13 @@ public class Robot extends TimedRobot {
     maxDriveSpeed = 0.5;
     intakeSpeed = 0.5;
     armSpeed = 0.5;
+
+    SmartDashboard.putNumber("Total Current", m_pdp.getTotalCurrent());
+    SmartDashboard.putNumber("Max Drive Speed", this.maxDriveSpeed);
+    SmartDashboard.putNumber("Intake Speed", this.intakeSpeed);
+
+    for(int i = 4; i < 12; i++) currents[i-4] = m_pdp.getCurrent(i);
+    SmartDashboard.putNumberArray("Current per Port", currents);
   }
 
   /** This function is called periodically during operator control. */
