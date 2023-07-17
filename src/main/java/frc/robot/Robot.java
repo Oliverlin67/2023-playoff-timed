@@ -35,6 +35,7 @@ public class Robot extends TimedRobot {
   private CANSparkMax m_d2;
   private CANSparkMax m_d3;
   private CANSparkMax m_d4;
+
   private CANSparkMax m_intake;
   private MotorController m_arm;
 
@@ -61,10 +62,12 @@ public class Robot extends TimedRobot {
     m_d3 = new CANSparkMax(Constants.motorDrive_3.getID(), MotorType.kBrushless);
     m_d4 = new CANSparkMax(Constants.motorDrive_4.getID(), MotorType.kBrushless);
 
+    // 不要動這部分 >>>
     m_intake = new CANSparkMax(Constants.motorIntake.getID(), MotorType.kBrushless);
     m_arm = new TalonFX(Constants.motorArm.getID());
 
     m_pdp = new PowerDistribution(0, ModuleType.kCTRE);
+    // <<<
 
     m_drive = new MecanumDrive(m_d2, m_d3, m_d1, m_d4);
 
@@ -106,13 +109,13 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousInit() {
-    //
+    // TODO Auto Init
   }
 
   /** This function is called periodically during autonomous. */
   @Override
   public void autonomousPeriodic() {
-    //
+    // TODO Auto Periodic
   }
 
   /** This function is called once when teleop is enabled. */
